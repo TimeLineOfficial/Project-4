@@ -4,7 +4,8 @@
 **Priority**: P1 (High)  
 **Story Points**: 5  
 **Reporter**: Amit Sharma (Senior Staff Engineer)  
-**Assignee**: Floor Infrastructure & Front-End Engineering Team  
+**Assignee**: Himesh Singh (PDIT-FTE-11462)  
+**Submission Code**: FTEWSVE | PDIT-FTE-11462 | Client Project Submission  
 
 ---
 
@@ -58,5 +59,25 @@ This repository delivers the **P1 Digital Solution**: a high-performance, respon
 
 ## 🌐 Deployment & Repository Links
 
-- **GitHub Repository**: [TimeLineOfficial/Project-4](https://github.com/TimeLineOfficial/Project-4.git)
-- **Live Deployment URL**: [https://timelineofficial.github.io/Project-4/](https://timelineofficial.github.io/Project-4/)
+- **GitHub Repository**: [https://github.com/TimeLineOfficial/Project-4](https://github.com/TimeLineOfficial/Project-4)
+- **Live Deployment URL (Vercel)**: [https://project4-alpha-nine.vercel.app/](https://project4-alpha-nine.vercel.app/)
+- **Technical Video Walkthrough**: [https://youtu.be/FXovj0sUirg](https://youtu.be/FXovj0sUirg)
+- **Backup Deployment URL (GitHub Pages)**: [https://timelineofficial.github.io/Project-4/](https://timelineofficial.github.io/Project-4/)
+
+---
+
+## 🚀 Local Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/TimeLineOfficial/Project-4.git
+   cd Project-4
+   ```
+2. Open `index.html` directly in any web browser, or serve locally using any lightweight HTTP server:
+   ```bash
+   # Using Python
+   python -m http.server 3000
+   # or using Node.js npx
+   npx serve .
+   ```
+3. Navigate to `http://localhost:3000` to interact with the gallery.

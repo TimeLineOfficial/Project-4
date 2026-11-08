@@ -1,11 +1,23 @@
 ================================================================================
 ENG-15994 | Handcrafted Furniture Workshop Gallery Submission Links
+Client Project Submission | FTEWSVE | PDIT-FTE-11462
 ================================================================================
 
 1. GitHub Repository URL:
 https://github.com/TimeLineOfficial/Project-4
 
-2. Live Deployment URL (GitHub Pages):
+2. Live Deployment URL (Vercel):
+https://project4-alpha-nine.vercel.app/
+
+3. Video Walkthrough URL (YouTube):
+https://youtu.be/FXovj0sUirg
+
+4. Backup Live Deployment URL (GitHub Pages):
 https://timelineofficial.github.io/Project-4/
 
+================================================================================
+Candidate Information:
+• Full Name: Himesh Singh
+• Employee ID: PDIT-FTE-11462
+• Project Type: Client Project Submission (ENG-15994)
 ================================================================================
