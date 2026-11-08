@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Handcrafted Furniture Workshop Gallery - Enterprise Floor Inventory & Custom Commission Portal">
+  <meta name="theme-color" content="#090d16">
+  <title>Handcrafted Furniture Workshop Gallery | Floor Management Portal</title>
+  <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+<body>
+  <!-- 100% a11y Skip Navigation -->
+  <a href="#main-content" class="skip-link">Skip to main gallery content</a>
+
+  <!-- Top Enterprise Header -->
+  <header class="app-header" role="banner">
+    <div class="container header-content">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">🪑</div>
+        <div>
+          <div class="brand-tag-row">
+            <span class="ticket-badge">ENG-15994</span>
+            <span class="priority-badge">P1 HIGH</span>
+            <span class="system-badge">WORKSHOP GALLERY</span>
+          </div>
+          <h1 class="brand-title">ATELIER TIMBERWORKS</h1>
+          <p class="brand-subtitle">Handcrafted Furniture Workshop Gallery &amp; Floor Inventory</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <span class="status-badge" id="network-status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span> Floor Catalog Live
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main id="main-content" class="container main-layout" role="main">
+    
+    <!-- Controls & Filters Section -->
+    <section class="controls-card" aria-labelledby="filter-heading">
+      <div class="controls-header">
+        <div>
+          <h2 id="filter-heading" class="section-title">Workshop Pieces Directory</h2>
+          <p class="section-desc">Search, filter, and dispatch floor catalog inventory and custom joinery commission requests.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" id="sim-slow-btn" class="btn btn-secondary btn-sm" aria-label="Simulate slow 3G network connection">
+            Simulate 3G Network Delay
+          </button>
+        </div>
+      </div>
+
+      <div class="search-filter-grid">
+        <!-- Search Input -->
+        <div class="input-group">
+          <label for="search-input" class="input-label">Search Furniture Pieces</label>
+          <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="search" 
+              id="search-input" 
+              class="form-control with-icon" 
+              placeholder="Search by title, wood species (e.g. Walnut, Oak), or artisan..."
+              aria-label="Search furniture catalog by title, wood species, or artisan name"
+            >
+          </div>
+        </div>
+
+        <!-- Category Select Filter -->
+        <div class="input-group">
+          <label id="category-select-label" for="category-select-trigger" class="input-label">Filter by Category</label>
+          <div class="custom-select-container" id="custom-category-select">
+            <button 
+              type="button" 
+              id="category-select-trigger" 
+              class="form-control custom-select-trigger" 
+              aria-haspopup="listbox" 
+              aria-expanded="false" 
+              aria-labelledby="category-select-label category-select-trigger"
+            >
+              <span class="selected-text" id="selected-category-text">All Furniture Categories</span>
+              <span class="select-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div class="custom-select-dropdown hidden" role="listbox" id="category-dropdown-list" aria-labelledby="category-select-label">
+              <div class="custom-option active" role="option" data-value="ALL" aria-selected="true" tabindex="0">All Furniture Categories</div>
+              <div class="custom-option" role="option" data-value="Dining Tables" aria-selected="false" tabindex="0">Dining Tables</div>
+              <div class="custom-option" role="option" data-value="Seating & Benches" aria-selected="false" tabindex="0">Seating &amp; Benches</div>
+              <div class="custom-option" role="option" data-value="Credenzas & Storage" aria-selected="false" tabindex="0">Credenzas &amp; Storage</div>
+              <div class="custom-option" role="option" data-value="Accent & Coffee Tables" aria-selected="false" tabindex="0">Accent &amp; Coffee Tables</div>
+              <div class="custom-option" role="option" data-value="Desks & Workspaces" aria-selected="false" tabindex="0">Desks &amp; Workspaces</div>
+            </div>
+            <!-- Hidden native select for synchronization & fallback -->
+            <select id="category-select" class="form-control hidden-select" style="display: none !important;" aria-hidden="true" tabindex="-1">
+              <option value="ALL">All Furniture Categories</option>
+              <option value="Dining Tables">Dining Tables</option>
+              <option value="Seating & Benches">Seating &amp; Benches</option>
+              <option value="Credenzas & Storage">Credenzas &amp; Storage</option>
+              <option value="Accent & Coffee Tables">Accent &amp; Coffee Tables</option>
+              <option value="Desks & Workspaces">Desks &amp; Workspaces</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Sort Select Filter -->
+        <div class="input-group">
+          <label for="sort-select" class="input-label">Sort Collection</label>
+          <select id="sort-select" class="form-control native-sort" aria-label="Sort furniture pieces">
+            <option value="featured">Featured Artisanal Picks</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="lead-time">Lead Time: Quickest Ready</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Category Pills -->
+      <div class="category-pills" role="tablist" aria-label="Quick Category Filter">
+        <button type="button" class="pill-btn active" data-category="ALL" role="tab" aria-selected="true">All (8)</button>
+        <button type="button" class="pill-btn" data-category="Dining Tables" role="tab" aria-selected="false">Dining Tables</button>
+        <button type="button" class="pill-btn" data-category="Seating & Benches" role="tab" aria-selected="false">Seating &amp; Benches</button>
+        <button type="button" class="pill-btn" data-category="Credenzas & Storage" role="tab" aria-selected="false">Credenzas &amp; Storage</button>
+        <button type="button" class="pill-btn" data-category="Accent & Coffee Tables" role="tab" aria-selected="false">Accent &amp; Coffee</button>
+        <button type="button" class="pill-btn" data-category="Desks & Workspaces" role="tab" aria-selected="false">Desks &amp; Workspaces</button>
+      </div>
+    </section>
+
+    <!-- Async Loading Indicator (Bad Connectivity NFR) -->
+    <div id="loading-spinner" class="loading-overlay hidden" aria-live="assertive" aria-label="Loading furniture catalog data">
+      <div class="spinner-box">
+        <div class="spinner"></div>
+        <p class="spinner-text">Simulating 3G Workshop Catalog Fetch...</p>
+        <p class="spinner-sub">Buffering high-resolution timber grain specs</p>
+      </div>
+    </div>
+
+    <!-- Furniture Gallery Section -->
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="gallery-header">
+        <h3 id="gallery-heading" class="gallery-count-title">
+          Workshop Masterpieces <span id="piece-count-badge" class="count-badge">8 Pieces</span>
+        </h3>
+        <div class="filter-status-tag" id="active-filter-indicator">
+          Showing: <strong>All Categories</strong>
+        </div>
+      </div>
+
+      <!-- Empty State View (The Unhappy Path) -->
+      <div id="empty-state" class="empty-state-card hidden" role="region" aria-live="polite">
+        <div class="empty-icon" aria-hidden="true">🪵</div>
+        <h4 class="empty-title">No Workshop Furniture Pieces Found</h4>
+        <p class="empty-desc">We couldn't find any artisanal pieces matching your search query or wood category filters.</p>
+        <button type="button" id="reset-filters-btn" class="btn btn-primary" aria-label="Reset all search filters">
+          Reset Search &amp; Filters
+        </button>
+      </div>
+
+      <!-- Dynamic Gallery Grid Container -->
+      <div id="furniture-grid" class="furniture-grid" role="list">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Custom Commission & Quote Request Modal Dialog -->
+  <div id="quote-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">Atelier Floor Request</span>
+          <h3 id="modal-title" class="modal-title">Inquire / Request Commission Quote</h3>
+        </div>
+        <button type="button" id="close-modal-btn" class="close-btn" aria-label="Close commission modal">✕</button>
+      </div>
+
+      <form id="quote-form" class="modal-body" novalidate>
+        <input type="hidden" id="piece-id-input">
+
+        <!-- Selected Piece Summary Box -->
+        <div id="piece-summary-box" class="piece-summary-box">
+          <!-- Filled dynamically by app.js -->
+        </div>
+
+        <!-- Form Validation Error Alert (The Unhappy Path) -->
+        <div id="form-error-alert" class="alert alert-error hidden" role="alert" aria-live="assertive">
+          <span aria-hidden="true">⚠️</span> Please correct the highlighted errors before submitting.
+        </div>
+
+        <!-- Full Name -->
+        <div class="input-group">
+          <label for="client-name" class="input-label">Client / Dispatcher Full Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="client-name" 
+            name="clientName" 
+            class="form-control" 
+            placeholder="e.g. Eleanor Vance"
+            required
+            aria-required="true"
+          >
+          <span id="name-error" class="error-msg hidden">Full name is required (minimum 2 characters).</span>
+        </div>
+
+        <!-- Email Address -->
+        <div class="input-group">
+          <label for="client-email" class="input-label">Email Address <span class="required">*</span></label>
+          <input 
+            type="email" 
+            id="client-email" 
+            name="clientEmail" 
+            class="form-control" 
+            placeholder="eleanor.vance@example.com"
+            required
+            aria-required="true"
+          >
+          <span id="email-error" class="error-msg hidden">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="input-group">
+          <label for="client-phone" class="input-label">Phone Contact <span class="required">*</span></label>
+          <input 
+            type="tel" 
+            id="client-phone" 
+            name="clientPhone" 
+            class="form-control" 
+            placeholder="(555) 234-5678"
+            required
+            aria-required="true"
+          >
+          <span id="phone-error" class="error-msg hidden">Please enter a valid phone number (at least 7 digits).</span>
+        </div>
+
+        <!-- Custom Timber Spec / Finish Preference -->
+        <div class="input-group">
+          <label for="custom-timber" class="input-label">Preferred Timber Species &amp; Finish</label>
+          <select id="custom-timber" name="customTimber" class="form-control">
+            <option value="Standard Showroom Timber">Standard Piece Timber Spec</option>
+            <option value="Solid American Black Walnut">Solid American Black Walnut (Bookmatched)</option>
+            <option value="Quarter-Sawn White Oak">Quarter-Sawn White Oak (Fumed / Natural)</option>
+            <option value="Ebonized Black Ash">Ebonized Hard Ash (Matte Patina)</option>
+            <option value="Figured Black Cherry">Figured Black Cherry (Hand-Rubbed Tung Oil)</option>
+            <option value="Reclaimed Rock Maple">Reclaimed Rock Maple (Satin Hardwax)</option>
+          </select>
+        </div>
+
+        <!-- Estimated Budget Range -->
+        <div class="input-group">
+          <label for="budget-estimate" class="input-label">Target Budget Allocation ($ USD) <span class="required">*</span></label>
+          <input 
+            type="number" 
+            id="budget-estimate" 
+            name="budgetEstimate" 
+            class="form-control" 
+            min="500" 
+            max="100000" 
+            step="100" 
+            value="3500"
+            required
+            aria-required="true"
+          >
+          <span id="budget-error" class="error-msg hidden">Please enter a valid budget allocation ($500 - $100,000).</span>
+        </div>
+
+        <!-- Architectural Notes / Custom Joinery Inquiries -->
+        <div class="input-group">
+          <label for="custom-notes" class="input-label">Architectural Dimensions &amp; Custom Joinery Notes</label>
+          <textarea 
+            id="custom-notes" 
+            name="customNotes" 
+            class="form-control" 
+            rows="3" 
+            placeholder="e.g. Custom 108-inch length requested, butterfly key Dutch dovetails, specific room access doorway dimensions..."
+          ></textarea>
+          <p class="input-help">All inquiries are strictly sanitized against XSS injection before state ingestion.</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancel-modal-btn" class="btn btn-secondary" aria-label="Cancel quote inquiry">Cancel</button>
+          <button type="submit" id="submit-quote-btn" class="btn btn-primary" aria-label="Submit commission quote request">Submit Workshop Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Corporate Monochromatic Footer -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-brand-meta">
+        <p>© 2026 Atelier Timberworks Workshop • Monochromatic Corporate NFR Standards</p>
+        <p class="footer-sub">Ticket ENG-15994 • 100% WCAG AAA Compliant • Sanitized State Telemetry Active</p>
+      </div>
+      <div class="footer-badges">
+        <span class="footer-tag">Pure HTML5 &amp; Vanilla CSS</span>
+        <span class="footer-tag">Zero Framework Overhead</span>
+        <span class="footer-tag">3G Fault Tolerant</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=1.0"></script>
+</body>
+</html>
